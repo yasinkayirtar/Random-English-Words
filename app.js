@@ -82,7 +82,7 @@ function InfoPanel(data) {
     if (meaning.length == 1) {
         source1.innerHTML = `<b> Source </b>: ${meaning[0].sourceDictionary}`;
         meaning1.innerHTML = `<b>Meaning:</b> ${meaning[0].text}`;
-        example1.innerHTML = ` <b>Example: </b>  ${meaning[0].exampleUses[0] ? meaning[0].exampleUses[0] : " no example"}`;
+
         source2.innerHTML = `<b> Source </b>: No other Source`;
         source3.innerHTML = `<b> Source </b>: No Source`;
 
@@ -90,11 +90,13 @@ function InfoPanel(data) {
     } else if (meaning.length == 2) {
         meaning1.innerHTML = `<b>Meaning:</b> ${meaning[0].text}`;
         source1.innerHTML = `<b> Source </b>: ${meaning[0].sourceDictionary}`;
-        example1.innerHTML = `<b>Example: </b> ${meaning[0].exampleUses[0]}`;
+
+
 
         source2.innerHTML = `<b> Source </b>: ${meaning[1].sourceDictionary}`;
         meaning2.innerHTML = `<b>Meaning:</b> ${meaning[1].text}`;
-        example2.innerHTML = `<b>Example: </b> ${meaning[1].exampleUses[0]}`;
+
+
 
         source3.innerHTML = `<b> Source </b>: No Source`;
 
@@ -112,9 +114,12 @@ function InfoPanel(data) {
 
         meaning3.innerHTML = `<b>Meaning:</b> ${meaning[2].text}`;
 
-        example3.innerHTML = `<b>Example: </b> ${meaning[2].exampleUses[0]}`;
-        example1.innerHTML = `<b>Example: </b>${meaning[0].exampleUses[0]}`;
-        example2.innerHTML = `<b>Example: </b> ${meaning[1].exampleUses[0]}`;
+
+
+        example1.innerHTML = ` <b>Example: </b>  ${meaning[0].exampleUses[0].text ? meaning[0].exampleUses[0].text : " no example"}`;
+
+
+
         source3.innerHTML = `<b> Source </b>: ${meaning[2].sourceDictionary}`;
 
 
@@ -126,8 +131,9 @@ function InfoPanel(data) {
             partOf.innerHTML = `<b> Part Of Speech </b>: ${meaning[i].partOfSpeech}`
 
         }
+        if (meaning[i].exampleUses[i].text)
 
-
+            example1.innerHTML = `<b>Example: </b>  ${meaning[i].exampleUses[i].text}`;
     }
 
 
