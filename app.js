@@ -4,7 +4,9 @@ const moreInfoPanel = document.querySelector(".moreInfo")
 const moreInfo = document.querySelector("#moreInfo");
 const panelInfo1 = document.querySelector(".panelInfo1")
 const panelInfo2 = document.querySelector(".panelInfo2")
-const panelInfo3 = document.querySelector(".panelInfo3")
+const panelInfo3 = document.querySelector(".panelInfo3");
+const copyBtn = document.querySelector("#copy");
+
 
 
 
@@ -21,6 +23,7 @@ const data2 = async () => {
 
     createCard(a);
     data3(a)
+
     // setTimeout(() => { wordReturn(a) }, 1000)
 }
 
@@ -131,14 +134,15 @@ function InfoPanel(data) {
             partOf.innerHTML = `<b> Part Of Speech </b>: ${meaning[i].partOfSpeech}`
 
         }
-        if (meaning[i].exampleUses[i].text)
+        if (meaning[i].exampleUses[i].text) {
 
             example1.innerHTML = `<b>Example: </b>  ${meaning[i].exampleUses[i].text}`;
+        }
+
+
+
+
     }
-
-
-
-
 }
 
 
@@ -174,10 +178,15 @@ function createCard(word) {
 
 
 
+
 }
 
 
+// async function justCopy(word) {
+//     let copyWord = await navigator.clipboard.writeText(word);
+//     console.log(copyWord)
 
+// }
 
 
 data2()
@@ -193,6 +202,9 @@ moreInfo.addEventListener("click", (e) => {
 
 })
 
+copyBtn.addEventListener("click", () => {
+    console.log("deneme")
+})
 
 
 
