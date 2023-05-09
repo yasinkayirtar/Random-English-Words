@@ -6,7 +6,8 @@ const panelInfo1 = document.querySelector(".panelInfo1")
 const panelInfo2 = document.querySelector(".panelInfo2")
 const panelInfo3 = document.querySelector(".panelInfo3");
 const copyBtn = document.querySelector("#copy");
-
+const saveBtn =document.querySelector (".like");
+saveBtn.disabled =true;
 
 
 
